@@ -1,0 +1,18 @@
+2024-04-06 09:35:48.750000+03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" not found (this database is empty); SQL statement:
+select username,password,enabled from users where username = ? [42104-224]
+2024-04-06 09:51:51.829233+03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT [*]IGNORE INTO `users` VALUES (NULL, 'happy', '12345', '1')"; expected "INTO"; SQL statement:
+INSERT IGNORE INTO `users` VALUES (NULL, 'happy', '12345', '1') [42001-224]
+2024-04-06 09:52:44.745426+03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT [*]IGNORE INTO `users` VALUES (1, 'happy', '12345', '1')"; expected "INTO"; SQL statement:
+INSERT IGNORE INTO `users` VALUES (1, 'happy', '12345', '1') [42001-224]
+2024-04-06 09:53:01.567240+03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" not found (this database is empty); SQL statement:
+INSERT  INTO `users` VALUES (1, 'happy', '12345', '1') [42104-224]
+2024-04-06 09:53:40.590596+03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" not found (this database is empty); SQL statement:
+INSERT  INTO `users` VALUES (1, 'happy', '12345', '1') [42104-224]
+2024-04-06 09:55:15.566440+03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" not found (this database is empty); SQL statement:
+INSERT  INTO `users` VALUES (1, 'happy', '12345', '1') [42104-224]
