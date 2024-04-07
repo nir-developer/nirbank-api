@@ -22,7 +22,7 @@ public class NirBankUserDetailsService implements UserDetailsService {
 	@Autowired 
 	CustomerRepository customerRepository;
 	
-		@Override
+	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		
 		String userName, password = null; 

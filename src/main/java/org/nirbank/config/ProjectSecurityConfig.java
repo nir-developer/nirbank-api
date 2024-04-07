@@ -1,17 +1,11 @@
 package org.nirbank.config;
 
-import javax.sql.DataSource;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.crypto.password.NoOpPasswordEncoder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
@@ -35,6 +29,18 @@ public class ProjectSecurityConfig {
 		return http.build();
 	}
 	
+	
+
+///////////////////////////////////////////////////////////////////////////
+//SECTION 04: Password Management & Password Encoders 
+//////////////////////////////////////////////////
+	@Bean 
+	public PasswordEncoder bcryptPasswordEncoder() 
+	{
+		return new BCryptPasswordEncoder();
+	}
+	
+
 	
 ///////////////////////////////////////////////////////////////
 //SECTION 03: Defining and Managing Users
@@ -66,11 +72,12 @@ public class ProjectSecurityConfig {
 	
 
 //I MUST TO HAVE AN INSTANCE OF PasswordEncoder - IN ANY CASE!! 
-@Bean
-public PasswordEncoder passwordEncoder()
-{
-	return NoOpPasswordEncoder.getInstance();
-}
+//REPLACED BY Bcrypt password encoder on section 04
+//@Bean
+//public PasswordEncoder passwordEncoder()
+//{
+//	return NoOpPasswordEncoder.getInstance();
+//}
 	
 	
 	
